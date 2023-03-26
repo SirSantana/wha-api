@@ -24,9 +24,9 @@ mongoose.connect(URL).then(() => {
             dataPath:'/tmp',
             store: store,
             backupSyncIntervalMs: 300000,
-        })
+        }),
     });
-    console.log('hola2');
+    console.log('hola22');
     client.on('qr', (qr) => {
         // NOTE: This event will not be fired if a session is specified.
         qrcode.generate(qr, { small: true });
