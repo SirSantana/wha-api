@@ -55,7 +55,6 @@ mongoose.connect(URL).then(() => {
         if (client.info === undefined) {
             console.log('the system is not ready yet');
             res.send('Erro').status(401)
-
         }
         else {
             client.sendMessage(`${req.body.number}@c.us`, req.body.titulo)
