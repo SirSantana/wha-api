@@ -1,9 +1,13 @@
 const { Client, RemoteAuth } = require('whatsapp-web.js');
 const express = require('express');
 const qrcode = require('qrcode-terminal');
-
+const bodyParse= require('body-parser')
 
 const app = express()
+
+
+app.use(bodyParse.urlencoded(true))
+app.use(bodyParse.json())
 
 app.get("/", (req, res) => {
     res.send('Hola a todos')
@@ -11,6 +15,7 @@ app.get("/", (req, res) => {
 // // Require database
 const { MongoStore } = require('wwebjs-mongo');
 const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3001
 
 
 const URL = `mongodb+srv://santaNaN:C1Dgz8ycXDQVpHiB@cluster0.exgvi.mongodb.net/?retryWrites=true&w=majority`
@@ -53,6 +58,6 @@ mongoose.connect(URL).then(() => {
 
 
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log('Server on port 3001')
 })
