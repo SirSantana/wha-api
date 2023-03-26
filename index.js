@@ -4,6 +4,7 @@ const qrcode = require('qrcode-terminal');
 const bodyParse = require('body-parser')
 const cors = require('cors')
 const app = express()
+require("dotenv").config();
 
 
 app.use(bodyParse.urlencoded(true))
@@ -19,7 +20,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3001
 
 
-const URL = `mongodb+srv://santaNaN:C1Dgz8ycXDQVpHiB@cluster0.exgvi.mongodb.net/?retryWrites=true&w=majority`
+const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/?retryWrites=true&w=majority`
 
 // Load the session data
 mongoose.connect(URL).then(() => {
