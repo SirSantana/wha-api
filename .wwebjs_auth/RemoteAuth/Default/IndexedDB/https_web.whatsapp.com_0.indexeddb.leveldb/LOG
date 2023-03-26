@@ -1,0 +1,32 @@
+2023/03/26-16:34:11.720 295c Creating DB C:\Users\Usuario\Desktop\QuarksCodes\wha\.wwebjs_auth\RemoteAuth\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2023/03/26-16:34:11.728 295c Reusing MANIFEST C:\Users\Usuario\Desktop\QuarksCodes\wha\.wwebjs_auth\RemoteAuth\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/03/26-16:34:11.797 bb0 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/03/26-16:34:26.054 1fe4 Level-0 table #5: started
+2023/03/26-16:34:26.100 1fe4 Level-0 table #5: 1095023 bytes OK
+2023/03/26-16:34:26.102 1fe4 Delete type=0 #3
+2023/03/26-16:34:30.645 bb0 Level-0 table #7: started
+2023/03/26-16:34:30.682 bb0 Level-0 table #7: 1305906 bytes OK
+2023/03/26-16:34:30.684 bb0 Delete type=0 #4
+2023/03/26-16:34:30.690 bb0 Compacting 1@1 + 1@2 files
+2023/03/26-16:34:30.836 bb0 Generated table #8@1: 26482 keys, 1360565 bytes
+2023/03/26-16:34:30.836 bb0 Compacted 1@1 + 1@2 files => 1360565 bytes
+2023/03/26-16:34:30.837 bb0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/03/26-16:34:30.838 bb0 Delete type=2 #5
+2023/03/26-16:34:30.838 bb0 Delete type=2 #7
+2023/03/26-16:34:37.316 4a28 Level-0 table #10: started
+2023/03/26-16:34:37.371 4a28 Level-0 table #10: 1160572 bytes OK
+2023/03/26-16:34:37.372 4a28 Delete type=0 #6
+2023/03/26-16:34:37.390 4a28 Compacting 1@1 + 1@2 files
+2023/03/26-16:34:37.472 4a28 Generated table #11@1: 37750 keys, 1981370 bytes
+2023/03/26-16:34:37.472 4a28 Compacted 1@1 + 1@2 files => 1981370 bytes
+2023/03/26-16:34:37.473 4a28 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/03/26-16:34:37.473 4a28 Delete type=2 #8
+2023/03/26-16:34:37.473 4a28 Delete type=2 #10
+2023/03/26-16:34:48.108 3e14 Level-0 table #13: started
+2023/03/26-16:34:48.228 3e14 Level-0 table #13: 1034014 bytes OK
+2023/03/26-16:34:48.229 3e14 Delete type=0 #9
+2023/03/26-16:34:48.238 bb0 Compacting 1@1 + 1@2 files
+2023/03/26-16:34:48.334 bb0 Generated table #14@1: 41130 keys, 2193799 bytes
+2023/03/26-16:34:48.353 bb0 Generated table #15@1: 13822 keys, 306794 bytes
+2023/03/26-16:34:48.353 bb0 Compacted 1@1 + 1@2 files => 2500593 bytes
+2023/03/26-16:34:48.354 bb0 compacted to: files[ 0 0 2 0 0 0 0 ]
