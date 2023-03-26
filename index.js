@@ -5,7 +5,7 @@ const qrcode = require('qrcode-terminal');
 
 const app = express()
 
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     res.send('Hola a todos')
 })
 // // Require database
@@ -21,11 +21,11 @@ mongoose.connect(URL).then(() => {
     const store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
         authStrategy: new RemoteAuth({
-            dataPath:'/tmp',
+            dataPath: '/tmp',
             store: store,
             backupSyncIntervalMs: 300000,
         }),
-        puppeteer:{args:['--no-sandbox', '--disable-setuid-sandbox']}
+        puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
     });
     console.log('hola22');
     client.on('qr', (qr) => {
@@ -37,17 +37,20 @@ mongoose.connect(URL).then(() => {
         console.log('SAVED');
     })
     console.log('hola3');
-    client.on('ready', () => {
-        // Do Stuff...
-        client.sendMessage(`573143551942@c.us`, 'Hola')
+    // client.on('ready', () => {
+    //     // Do Stuff...
+    //     client.sendMessage(`573143551942@c.us`, 'Hola')
+    // })
+    app.get("/hi", (req, res) => {
+        res.send(client.sendMessage(`573143551942@c.us`, 'Hola'))
     })
     client.initialize();
 
 });
- 
 
 
 
-app.listen(3001, ()=>{
+
+app.listen(3001, () => {
     console.log('Server on port 3001')
 })
