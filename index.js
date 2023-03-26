@@ -25,6 +25,7 @@ mongoose.connect(URL).then(() => {
             store: store,
             backupSyncIntervalMs: 300000,
         }),
+        puppeteer:{args:['--no-sandbox', '--disable-setuid-sandbox']}
     });
     console.log('hola22');
     client.on('qr', (qr) => {
