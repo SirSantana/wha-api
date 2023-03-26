@@ -48,8 +48,9 @@ mongoose.connect(URL).then(() => {
     //     // Do Stuff...
     //     client.sendMessage(`573143551942@c.us`, 'Hola')
     // })
-    app.get("/hi", (req, res) => {
-        res.send(client.sendMessage(`573143551942@c.us`, 'Hola'))
+    app.post("/hi", (req, res) => {
+        client.sendMessage(`573143551942@c.us`, 'Hola')
+        res.send('enviado correctamente').status(204)
     })
     client.initialize();
 
