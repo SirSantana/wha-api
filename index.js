@@ -37,6 +37,8 @@ mongoose.connect(URL).then(() => {
         console.log('SAVED');
     })
     console.log('hola3');
+    console.log('hola4');
+
     // client.on('ready', () => {
     //     // Do Stuff...
     //     client.sendMessage(`573143551942@c.us`, 'Hola')
