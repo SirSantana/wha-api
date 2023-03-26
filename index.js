@@ -1,7 +1,7 @@
 const { Client, RemoteAuth } = require('whatsapp-web.js');
 const express = require('express');
 const qrcode = require('qrcode-terminal');
-const bodyParse= require('body-parser')
+const bodyParse = require('body-parser')
 const cors = require('cors')
 const app = express()
 
@@ -52,9 +52,16 @@ mongoose.connect(URL).then(() => {
     })
     app.post("/hi", (req, res) => {
         console.log(req.body);
+        if (client.info === undefined) {
+            console.log('the system is not ready yet');
+            res.send('Erro').status(401)
 
-        client.sendMessage(`${req.body.number}@c.us`, req.body.titulo)
-        res.send('enviado correctamente').status(204)
+        }
+        else {
+            client.sendMessage(`${req.body.number}@c.us`, req.body.titulo)
+            res.send('enviado correctamente').status(204)
+        }
+
     })
     client.initialize();
 
