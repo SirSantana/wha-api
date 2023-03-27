@@ -34,7 +34,6 @@ mongoose.connect(URL).then(() => {
         }),
         puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
     });
-    console.log('hola22');
     client.on('qr', (qr) => {
         // NOTE: This event will not be fired if a session is specified.
         qrcode.generate(qr, { small: true });
@@ -43,12 +42,9 @@ mongoose.connect(URL).then(() => {
         // Do Stuff...
         console.log('SAVED');
     })
-    console.log('hola3');
-    console.log('hola4');
 
     client.on('ready', () => {
         // Do Stuff...
-        // client.sendMessage(`573143551942@c.us`, 'Hola')
         console.log('ready');
     })
     app.post("/hi", (req, res) => {
