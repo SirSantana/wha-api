@@ -45,7 +45,7 @@ mongoose.connect(URL).then(() => {
 
     client.on('ready', () => {
         // Do Stuff...
-        console.log('ready');
+        console.log('ready!');
     })
     app.post("/hi", (req, res) => {
         console.log(req.body);
