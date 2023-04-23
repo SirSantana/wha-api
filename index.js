@@ -24,7 +24,6 @@ const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.
 
 // Load the session data
 mongoose.connect(URL).then(() => {
-    console.log('hola1');
     const store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
         authStrategy: new RemoteAuth({
