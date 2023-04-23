@@ -66,5 +66,5 @@ mongoose.connect(URL).then(() => {
 
 
 app.listen(PORT, () => {
-    console.log('Server on port 3001')
+    console.log(`Server on port ${PORT}`)
 })
