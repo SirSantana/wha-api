@@ -12,7 +12,7 @@ app.use(bodyParse.json())
 app.use(cors())
 
 app.get("/", (req, res) => {
-    res.send('Hola a todos1')
+    res.send('Hola a todos')
 })
 // // Require database
 const { MongoStore } = require('wwebjs-mongo');
