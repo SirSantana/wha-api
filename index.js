@@ -47,7 +47,6 @@ mongoose.connect(URL).then(() => {
         console.log('ready!');
     })
     app.post("/hi", (req, res) => {
-        console.log(req.body);
         if (client.info === undefined) {
             console.log('the system is not ready yet');
             res.send('Erro').status(401)
