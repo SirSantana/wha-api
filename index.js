@@ -30,7 +30,7 @@ mongoose.connect(URL).then(() => {
             store: store,
             backupSyncIntervalMs: 10000000,
         }),
-        puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
+        // puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
     });
     client.on('qr', (qr) => {
         // NOTE: This event will not be fired if a session is specified.
