@@ -19,14 +19,14 @@ app.get("/", (req, res) => {
 })
 // // Require database
 
-const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/test?retryWrites=true&w=majority`
+const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/?retryWrites=true&w=majority`
 
 // Load the session data
 mongoose.connect(URL).then(() => {
     const store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
         authStrategy: new RemoteAuth({
-            dataPath: '/tmp',
+            // dataPath: '/tmp',
             store: store,
             backupSyncIntervalMs: 10000000,
         }),
