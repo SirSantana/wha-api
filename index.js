@@ -5,6 +5,11 @@ const bodyParse = require('body-parser')
 const cors = require('cors')
 const app = express()
 require("dotenv").config();
+const { MongoStore } = require('wwebjs-mongo');
+const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3001
+
+
 app.use(bodyParse.urlencoded(true))
 app.use(bodyParse.json())
 app.use(cors())
@@ -13,12 +18,8 @@ app.get("/", (req, res) => {
     res.send('Hola a todos')
 })
 // // Require database
-const { MongoStore } = require('wwebjs-mongo');
-const mongoose = require('mongoose');
-const PORT = process.env.PORT || 3001
 
-
-const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
+const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/test?retryWrites=true&w=majority`
 
 // Load the session data
 mongoose.connect(URL).then(() => {
