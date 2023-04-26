@@ -1,5 +1,6 @@
 node_modules/
 .wwebjs_auth/session
+.github/workflows
 
 .expo/
 dist/
