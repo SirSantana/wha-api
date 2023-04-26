@@ -5,9 +5,6 @@ const bodyParse = require('body-parser')
 const cors = require('cors')
 const app = express()
 require("dotenv").config();
-const { MongoStore } = require('wwebjs-mongo');
-const mongoose = require('mongoose');
-const PORT = process.env.PORT || 3001
 
 
 app.use(bodyParse.urlencoded(true))
@@ -18,6 +15,10 @@ app.get("/", (req, res) => {
     res.send('Hola a todos')
 })
 // // Require database
+const { MongoStore } = require('wwebjs-mongo');
+const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3001
+
 
 const URL = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.exgvi.mongodb.net/?retryWrites=true&w=majority`
 
@@ -26,11 +27,11 @@ mongoose.connect(URL).then(() => {
     const store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
         authStrategy: new RemoteAuth({
-            // dataPath: '/tmp',
+            dataPath: '/tmp',
             store: store,
             backupSyncIntervalMs: 10000000,
         }),
-        // puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
+        puppeteer: { args: ['--no-sandbox', '--disable-setuid-sandbox'] }
     });
     client.on('qr', (qr) => {
         // NOTE: This event will not be fired if a session is specified.
@@ -43,7 +44,7 @@ mongoose.connect(URL).then(() => {
 
     client.on('ready', () => {
         // Do Stuff...
-        console.log('ready to listen');
+        console.log('ready!');
     })
     app.post("/hi", (req, res) => {
         if (client.info === undefined) {
@@ -52,7 +53,7 @@ mongoose.connect(URL).then(() => {
         }
         else {
             client.sendMessage(`${req.body.number}@c.us`, req.body.titulo)
-            res.send('enviado correctamente!').status(204)
+            res.send('enviado correctamente').status(204)
         }
 
     })
