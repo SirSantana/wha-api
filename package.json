@@ -15,7 +15,6 @@
     "cors": "2.8.5",
     "dotenv": "16.0.3",
     "express": "4.18.2",
-    "modclean": "^3.0.0-beta.1",
     "mongoose": "7.0.3",
     "qrcode-terminal": "0.12.0",
     "whatsapp-web.js": "1.19.5",
