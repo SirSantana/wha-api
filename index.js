@@ -5,8 +5,7 @@ const bodyParse = require('body-parser')
 const cors = require('cors')
 const app = express()
 require("dotenv").config();
-
-
+const modclean = require('modclean');
 app.use(bodyParse.urlencoded(true))
 app.use(bodyParse.json())
 app.use(cors())
@@ -66,4 +65,6 @@ mongoose.connect(URL).then(() => {
 
 app.listen(PORT, () => {
     console.log(`Server on port ${PORT}`)
+    let result = modclean.clean();
+        console.log(`Successfully removed ${result.deleted.length} files/folders from the project`);
 })
