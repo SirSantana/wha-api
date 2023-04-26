@@ -53,7 +53,7 @@ mongoose.connect(URL).then(() => {
         }
         else {
             client.sendMessage(`${req.body.number}@c.us`, req.body.titulo)
-            res.send('enviado correctamente').status(204)
+            res.send('enviado correctamente!').status(204)
         }
 
     })
