@@ -27,7 +27,7 @@ mongoose.connect(URL).then(() => {
     const store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
         authStrategy: new RemoteAuth({
-            dataPath: '/tmp',
+            // dataPath: '/tmp',
             store: store,
             backupSyncIntervalMs: 10000000,
         }),
