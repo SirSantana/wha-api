@@ -44,7 +44,7 @@ mongoose.connect(URL).then(() => {
 
     client.on('ready', () => {
         // Do Stuff...
-        console.log('ready!');
+        console.log('readyy!');
     })
     app.post("/hi", (req, res) => {
         if (client.info === undefined) {
